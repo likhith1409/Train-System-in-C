@@ -1,0 +1,173 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void reservation(void);
+void reser_vation(void);
+void reserva_tion(void);
+
+int main()
+
+{
+
+	int menu_choice,choice_return;
+    start:
+    printf("\n*******Welcome to the Secunderabad Railway station********\n");
+    printf("\nPress 1 for 3A Coach Seat Reservation!\n");
+    printf("\n\nPress 2 for SL Coach Seat Reservation!\n");
+    printf("\n\nPress 3 for 2S Coach Seat Reservation!\n");
+    printf("\npress 4 for EXIT\n");
+	scanf("%d",&menu_choice);
+	switch(menu_choice)
+	{
+		case 1:
+			reservation();
+			break;
+		case 2:
+			reser_vation();
+			break;
+		case 3:
+			reserva_tion();
+			break;
+		case 4:
+			return(0);
+		default:
+			printf("\nInvalid choice");
+	}
+	goto start;
+	return 0;
+
+}
+
+void reservation(void)
+{
+	char confirm,name[50],ad[10],ph[10],amount[10];
+	int a;
+	float charges;
+	FILE *fp;
+	fp=fopen("c:\\LIKHITH.txt","a");
+	label:
+	printf("\n Enter your seat number from (1-50) in 3A Coach:");
+	scanf("%d",&a);
+	printf("\n******Please Wait******");
+    if(a<=50){
+	printf("***********************\n");
+	printf("\nYour Ticketing Details\n");
+	printf("\nEnter Your Name: ");
+	scanf("%s",name);
+	fprintf(fp,"Name:%s\n",name);
+	printf("\nEnter Your Addhar:");
+	scanf("%s",&ad);
+	fprintf(fp,"Addhar:%s\n",ad);
+	printf("\nEnter Your Phone no:");
+	scanf("%s",&ph);
+	fprintf(fp,"Phone:%s\n",ph);
+	printf("\nYour Coach:3A Coach");
+	fprintf(fp,"Your Coach:3A Coach\n");
+	printf("\nEnter Amount (Rs-460):");
+	scanf("%d",amount);
+        fprintf(fp,"Amount:%s\n",amount);
+	printf("\nYour Seat Number: %d \n\n",a);
+	fprintf(fp,"Seat Number=%d\n",a);
+	printf("PLEASE COLLECT YOUR TICKET\n");
+	printf("****************************\n");
+	printf("Press any button\n");
+	fprintf(fp,"\n\n\n");
+    }
+    else{
+       goto label;
+    }
+
+fclose(fp);
+getch();
+}
+
+void reser_vation(void)
+{
+	char confirm,name[50],ad[10],ph[10],amount[10];
+	int a;
+	float charges;
+	FILE *fp;
+	fp=fopen("c:\\LIKHITH.txt","a");
+	label:
+	printf("\n Enter your seat number from (1-100) in SL Coach:");
+	scanf("%d",&a);
+	printf("\n******Please Wait******");
+    if(a<=100){
+	printf("***********************\n");
+	printf("\nYour Ticketing Details\n");
+	printf("\nEnter Your Name: ");
+	scanf("%s",name);
+	fprintf(fp,"Name:%s\n",name);
+	printf("\nEnter Your Addhar:");
+	scanf("%s",&ad);
+	fprintf(fp,"Addhar:%s\n",ad);
+	printf("\nEnter Your Phone no:");
+	scanf("%s",&ph);
+	fprintf(fp,"Phone:%s\n",ph);
+	printf("\nYour Coach:SL Coach");
+        fprintf(fp,"Your Coach:SL Coach\n");
+	printf("\nEnter Amount (Rs-135):");
+	scanf("%s",amount);
+	fprintf(fp,"Amount:%s\n",amount);
+	printf("\nYour Seat Number: %d \n\n",a);
+        fprintf(fp,"Seat Number:%d\n",a);
+	printf("PLEASE COLLECT YOUR TICKET\n");
+	printf("****************************\n");
+	printf("Press any Button\n");
+	fprintf(fp,"\n\n\n");
+    }
+    else{
+       goto label;
+    }
+
+fclose(fp);
+getch();
+}
+
+void reserva_tion(void)
+{
+	char confirm,name[50],ad[10],ph[10],amount[10];
+	int a;
+	float charges;
+	FILE *fp;
+	fp=fopen("c:\\LIKHITH.txt","a");
+	label:
+	printf("\n Enter your seat number from (1-200) in 2S Coach:");
+	scanf("%d",&a);
+	printf("\n******Please Wait******");
+    if(a<=200){
+	printf("***********************\n");
+	printf("\nYour Ticketing Details\n");
+	printf("\nEnter Your Name: ");
+	scanf("%s",name);
+	fprintf(fp,"Name:%s\n",name);
+	printf("\nEnter Your Addhar:");
+	scanf("%s",&ad);
+	fprintf(fp,"Addhar:%s\n",ad);
+	printf("\nEnter Your Phone no:");
+	scanf("%s",&ph);
+	fprintf(fp,"Phone:%s\n",ph);
+	printf("\nYour Coach:2S Coach");
+        fprintf(fp,"Your Coach:2S Coach\n");
+	printf("\nEnter Amount (Rs-80):");
+	scanf("%s",amount);
+	fprintf(fp,"Amount:%s\n",amount);
+	printf("\nYour Seat Number: %d \n\n",a);
+        fprintf(fp,"Seat Number:%d\n",a);
+	printf("PLEASE COLLECT YOUR TICKET\n");
+	printf("****************************\n");
+	printf("Press any Button\n");
+	fprintf(fp,"\n\n\n");
+    }
+    else{
+       goto label;
+    }
+
+fclose(fp);
+getch();
+}
+
+
+
